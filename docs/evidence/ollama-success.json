@@ -1,0 +1,377 @@
+{
+  "id": "078c457654ff409bae580857931c4657",
+  "created_at": "2026-11-21T03:27:26.451246+00:00",
+  "mode": "ollama",
+  "model": "qwen3:4b",
+  "user_input": "請安排下一批工作，說明優先原因。",
+  "steps": [
+    {
+      "type": "decision",
+      "content": "選擇已註冊工具 get_kitchen_state，交由程式驗證參數。"
+    },
+    {
+      "type": "tool_call",
+      "name": "get_kitchen_state",
+      "arguments": {}
+    },
+    {
+      "type": "observation",
+      "name": "get_kitchen_state",
+      "result": {
+        "ok": true,
+        "clock": 2,
+        "version": 1,
+        "simulation": true,
+        "stations": {
+          "wok-1": {
+            "id": "wok-1",
+            "name": "炒台一",
+            "type": "wok",
+            "available": true
+          },
+          "soup-1": {
+            "id": "soup-1",
+            "name": "湯台一",
+            "type": "soup",
+            "available": true
+          },
+          "pass-1": {
+            "id": "pass-1",
+            "name": "出餐台",
+            "type": "pass",
+            "available": true
+          }
+        },
+        "chefs": {
+          "chef-a": {
+            "id": "chef-a",
+            "name": "阿明",
+            "skills": [
+              "wok",
+              "pass"
+            ],
+            "available": true
+          },
+          "chef-b": {
+            "id": "chef-b",
+            "name": "小陳",
+            "skills": [
+              "soup",
+              "pass"
+            ],
+            "available": true
+          }
+        },
+        "orders": {
+          "O001": {
+            "id": "O001",
+            "items": [
+              {
+                "dish": "fried_rice",
+                "quantity": 1
+              }
+            ],
+            "accepted_at": 0,
+            "due_at": 12,
+            "task_ids": [
+              "O001-1-1-cook",
+              "O001-1-1-plate"
+            ]
+          },
+          "O002": {
+            "id": "O002",
+            "items": [
+              {
+                "dish": "egg_soup",
+                "quantity": 1
+              }
+            ],
+            "accepted_at": 1,
+            "due_at": 9,
+            "task_ids": [
+              "O002-1-1-cook",
+              "O002-1-1-plate"
+            ]
+          },
+          "O003": {
+            "id": "O003",
+            "items": [
+              {
+                "dish": "kung_pao",
+                "quantity": 1
+              },
+              {
+                "dish": "greens",
+                "quantity": 1
+              }
+            ],
+            "accepted_at": 2,
+            "due_at": 16,
+            "task_ids": [
+              "O003-1-1-cook",
+              "O003-1-1-plate",
+              "O003-2-1-cook",
+              "O003-2-1-plate"
+            ]
+          }
+        },
+        "tasks": {
+          "O001-1-1-cook": {
+            "id": "O001-1-1-cook",
+            "order_id": "O001",
+            "dish": "蛋炒飯",
+            "step": "cook",
+            "station_type": "wok",
+            "minutes": 4,
+            "dependencies": [],
+            "status": "READY",
+            "ready_at": 0,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O001-1-1-plate": {
+            "id": "O001-1-1-plate",
+            "order_id": "O001",
+            "dish": "蛋炒飯",
+            "step": "plate",
+            "station_type": "pass",
+            "minutes": 1,
+            "dependencies": [
+              "O001-1-1-cook"
+            ],
+            "status": "WAITING",
+            "ready_at": null,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O002-1-1-cook": {
+            "id": "O002-1-1-cook",
+            "order_id": "O002",
+            "dish": "蛋花湯",
+            "step": "cook",
+            "station_type": "soup",
+            "minutes": 3,
+            "dependencies": [],
+            "status": "READY",
+            "ready_at": 1,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O002-1-1-plate": {
+            "id": "O002-1-1-plate",
+            "order_id": "O002",
+            "dish": "蛋花湯",
+            "step": "plate",
+            "station_type": "pass",
+            "minutes": 1,
+            "dependencies": [
+              "O002-1-1-cook"
+            ],
+            "status": "WAITING",
+            "ready_at": null,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O003-1-1-cook": {
+            "id": "O003-1-1-cook",
+            "order_id": "O003",
+            "dish": "宮保雞丁",
+            "step": "cook",
+            "station_type": "wok",
+            "minutes": 7,
+            "dependencies": [],
+            "status": "READY",
+            "ready_at": 2,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O003-1-1-plate": {
+            "id": "O003-1-1-plate",
+            "order_id": "O003",
+            "dish": "宮保雞丁",
+            "step": "plate",
+            "station_type": "pass",
+            "minutes": 1,
+            "dependencies": [
+              "O003-1-1-cook"
+            ],
+            "status": "WAITING",
+            "ready_at": null,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O003-2-1-cook": {
+            "id": "O003-2-1-cook",
+            "order_id": "O003",
+            "dish": "炒青菜",
+            "step": "cook",
+            "station_type": "wok",
+            "minutes": 3,
+            "dependencies": [],
+            "status": "READY",
+            "ready_at": 2,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          },
+          "O003-2-1-plate": {
+            "id": "O003-2-1-plate",
+            "order_id": "O003",
+            "dish": "炒青菜",
+            "step": "plate",
+            "station_type": "pass",
+            "minutes": 1,
+            "dependencies": [
+              "O003-2-1-cook"
+            ],
+            "status": "WAITING",
+            "ready_at": null,
+            "station_id": null,
+            "chef_id": null,
+            "reserved_at": null,
+            "started_at": null,
+            "finished_at": null
+          }
+        }
+      }
+    },
+    {
+      "type": "decision",
+      "content": "選擇已註冊工具 propose_schedule，交由程式驗證參數。"
+    },
+    {
+      "type": "tool_call",
+      "name": "propose_schedule",
+      "arguments": {
+        "state_version": 1,
+        "strategy": "fifo"
+      }
+    },
+    {
+      "type": "observation",
+      "name": "propose_schedule",
+      "result": {
+        "ok": true,
+        "strategy": "fifo",
+        "state_version": 1,
+        "clock": 2,
+        "assignments": [
+          {
+            "task_id": "O001-1-1-cook",
+            "order_id": "O001",
+            "dish": "蛋炒飯",
+            "step": "cook",
+            "station_id": "wok-1",
+            "station_name": "炒台一",
+            "chef_id": "chef-a",
+            "chef_name": "阿明",
+            "minutes": 4,
+            "reason": "FIFO：就緒於第 0 分鐘；前置工序已完成且工作站與廚師皆可用。"
+          },
+          {
+            "task_id": "O002-1-1-cook",
+            "order_id": "O002",
+            "dish": "蛋花湯",
+            "step": "cook",
+            "station_id": "soup-1",
+            "station_name": "湯台一",
+            "chef_id": "chef-b",
+            "chef_name": "小陳",
+            "minutes": 3,
+            "reason": "FIFO：就緒於第 1 分鐘；前置工序已完成且工作站與廚師皆可用。"
+          }
+        ],
+        "blocked": [
+          {
+            "task_id": "O003-1-1-cook",
+            "order_id": "O003",
+            "reason": "無可用的相容工作站"
+          },
+          {
+            "task_id": "O003-2-1-cook",
+            "order_id": "O003",
+            "reason": "無可用的相容工作站"
+          }
+        ],
+        "note": "僅為目前可開工的一批建議；需人工確認，不是完整未來排程。",
+        "proposal_id": "c4e67ad87dda494e9954cacb11b256eb"
+      }
+    },
+    {
+      "type": "final",
+      "content": "已安排下一批工作：  \n1. **O001 蛋炒飯（炒台一）** → 阿明（4分鐘）  \n2. **O002 蛋花湯（湯台一）** → 小陳（3分鐘）  \n\n**優先原因**：  \n- 依 FIFO 策略，O001 調用時間最早（第 0 分鐘），且炒台一與阿明資源可用；  \n- O002 調用時間次早（第 1 分鐘），湯台一與小陳資源可用；  \n- O003 的宮保雞丁與炒青菜因工作站（炒台一）已佔用，暫無法排程。  \n\n**限制與下一步**：  \n- 本提案僅為當前可開工任務，需人工確認後執行；  \n- 若需調整 O003 排程，請先釋放炒台一資源（需按設備控制按鈕）。"
+    }
+  ],
+  "proposals": [
+    {
+      "ok": true,
+      "strategy": "fifo",
+      "state_version": 1,
+      "clock": 2,
+      "assignments": [
+        {
+          "task_id": "O001-1-1-cook",
+          "order_id": "O001",
+          "dish": "蛋炒飯",
+          "step": "cook",
+          "station_id": "wok-1",
+          "station_name": "炒台一",
+          "chef_id": "chef-a",
+          "chef_name": "阿明",
+          "minutes": 4,
+          "reason": "FIFO：就緒於第 0 分鐘；前置工序已完成且工作站與廚師皆可用。"
+        },
+        {
+          "task_id": "O002-1-1-cook",
+          "order_id": "O002",
+          "dish": "蛋花湯",
+          "step": "cook",
+          "station_id": "soup-1",
+          "station_name": "湯台一",
+          "chef_id": "chef-b",
+          "chef_name": "小陳",
+          "minutes": 3,
+          "reason": "FIFO：就緒於第 1 分鐘；前置工序已完成且工作站與廚師皆可用。"
+        }
+      ],
+      "blocked": [
+        {
+          "task_id": "O003-1-1-cook",
+          "order_id": "O003",
+          "reason": "無可用的相容工作站"
+        },
+        {
+          "task_id": "O003-2-1-cook",
+          "order_id": "O003",
+          "reason": "無可用的相容工作站"
+        }
+      ],
+      "note": "僅為目前可開工的一批建議；需人工確認，不是完整未來排程。",
+      "proposal_id": "c4e67ad87dda494e9954cacb11b256eb"
+    }
+  ],
+  "status": "completed",
+  "answer": "已安排下一批工作：  \n1. **O001 蛋炒飯（炒台一）** → 阿明（4分鐘）  \n2. **O002 蛋花湯（湯台一）** → 小陳（3分鐘）  \n\n**優先原因**：  \n- 依 FIFO 策略，O001 調用時間最早（第 0 分鐘），且炒台一與阿明資源可用；  \n- O002 調用時間次早（第 1 分鐘），湯台一與小陳資源可用；  \n- O003 的宮保雞丁與炒青菜因工作站（炒台一）已佔用，暫無法排程。  \n\n**限制與下一步**：  \n- 本提案僅為當前可開工任務，需人工確認後執行；  \n- 若需調整 O003 排程，請先釋放炒台一資源（需按設備控制按鈕）。",
+  "tool_calls": 2,
+  "duration_ms": 71359
+}

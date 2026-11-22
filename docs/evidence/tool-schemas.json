@@ -1,0 +1,73 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_kitchen_state",
+      "description": "取得目前模擬時間、狀態版本、訂單、工序、工作站與廚師。任何排程前必須先查詢。",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {},
+        "title": "EmptyArgs",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "propose_schedule",
+      "description": "使用 FIFO 排程演算法產生可行派工提案，只建立建議，不直接保留資源或開工。",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "state_version": {
+            "description": "必須使用剛剛查詢得到的廚房狀態版本",
+            "minimum": 1,
+            "title": "State Version",
+            "type": "integer"
+          },
+          "strategy": {
+            "const": "fifo",
+            "default": "fifo",
+            "title": "Strategy",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state_version"
+        ],
+        "title": "ScheduleArgs",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_order_risks",
+      "description": "查詢訂單狀態及基於剩餘工序的逾期風險。最早完成下界不是 ETA。",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "order_id": {
+            "anyOf": [
+              {
+                "maxLength": 32,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "指定訂單，例如 O001；省略則查全部",
+            "title": "Order Id"
+          }
+        },
+        "title": "RiskArgs",
+        "type": "object"
+      }
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "id": "377059fbaeef488c93f92318439b6c2f",
+  "created_at": "2026-11-21T03:36:57.451367+00:00",
+  "mode": "ollama",
+  "model": "qwen3:4b",
+  "user_input": "請查詢訂單 O999 的延誤風險。",
+  "steps": [
+    {
+      "type": "decision",
+      "content": "選擇已註冊工具 get_order_risks，交由程式驗證參數。"
+    },
+    {
+      "type": "tool_call",
+      "name": "get_order_risks",
+      "arguments": {
+        "order_id": "O999"
+      }
+    },
+    {
+      "type": "observation",
+      "name": "get_order_risks",
+      "result": {
+        "ok": false,
+        "error": {
+          "code": "UNKNOWN_ORDER",
+          "message": "找不到指定訂單。"
+        }
+      }
+    },
+    {
+      "type": "final",
+      "content": "找不到指定訂單。\n請核對訂單編號後重新查詢；系統沒有此訂單的風險資料。"
+    }
+  ],
+  "proposals": [],
+  "status": "tool_error",
+  "answer": "找不到指定訂單。\n請核對訂單編號後重新查詢；系統沒有此訂單的風險資料。",
+  "model_answer": "找不到訂單 O999。請確認訂單編號是否正確，或聯繫後端支援。",
+  "answer_source": "tool_error_guard",
+  "tool_calls": 1,
+  "duration_ms": 19722
+}

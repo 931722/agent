@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-22",
+  "data_path": "/Volumes/Disk/file/Podman/data",
+  "config_path": "/Volumes/Disk/file/Podman/config",
+  "state_identical": true,
+  "trace_preserved": true,
+  "trace_id": "ccad84a9ba3744f4915d472fb06d1ddc",
+  "state_version": 7,
+  "clock": 6,
+  "local_backups_removed": true,
+  "local_allocated_bytes_freed": 24874741760
+}

@@ -1,0 +1,9 @@
+{
+  "vm_restarted": true,
+  "container_recreated": true,
+  "state_identical": true,
+  "trace_preserved": true,
+  "state_version": 5,
+  "clock": 6,
+  "trace_id": "ccad84a9ba3744f4915d472fb06d1ddc"
+}

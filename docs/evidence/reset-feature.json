@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-22",
+  "tests_passed_local": 43,
+  "tests_passed_container": 43,
+  "dom_http_integration": {
+    "cancel_preserved_state": true,
+    "reset_clock": 2,
+    "reset_orders": 3,
+    "trace_cleared": true,
+    "backup_download_valid_sqlite": true,
+    "controls_restored": true
+  },
+  "native_browser_final_click_verified": false,
+  "production_data_reset": false
+}

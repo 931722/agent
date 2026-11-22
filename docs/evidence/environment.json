@@ -1,0 +1,18 @@
+{
+  "python": "3.14.7",
+  "mode": "ollama",
+  "model": "qwen3:4b",
+  "ollama_cli": [
+    "sh",
+    "/Users/eason/Documents/ChatGPT/agent/scripts/ollama-local.sh"
+  ],
+  "podman_cli": [
+    "sh",
+    "/Users/eason/Documents/ChatGPT/agent/scripts/podman-local.sh"
+  ],
+  "ollama_models": [
+    "qwen3:4b"
+  ],
+  "selected_model_installed": true,
+  "podman_ready": true
+}

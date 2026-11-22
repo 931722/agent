@@ -1,0 +1,26 @@
+{
+  "purpose": "故意對未啟動服務的本機端點實測連線失敗；不代表成功呼叫模型",
+  "trace": {
+    "id": "c3b0842f08ea4841a722ad7d0a0ae253",
+    "created_at": "2026-11-21T03:35:46.601615+00:00",
+    "mode": "ollama",
+    "model": "qwen3:4b",
+    "user_input": "安排下一批工作",
+    "steps": [
+      {
+        "type": "error",
+        "code": "MODEL_UNAVAILABLE",
+        "content": "無法連線到 Ollama。請啟動 ollama serve，或確認容器內的 OLLAMA_BASE_URL。系統沒有自動切換成模擬模型。"
+      }
+    ],
+    "proposals": [],
+    "status": "failed",
+    "answer": "無法連線到 Ollama。請啟動 ollama serve，或確認容器內的 OLLAMA_BASE_URL。系統沒有自動切換成模擬模型。",
+    "error": {
+      "code": "MODEL_UNAVAILABLE",
+      "message": "無法連線到 Ollama。請啟動 ollama serve，或確認容器內的 OLLAMA_BASE_URL。系統沒有自動切換成模擬模型。"
+    },
+    "tool_calls": 0,
+    "duration_ms": 25
+  }
+}
